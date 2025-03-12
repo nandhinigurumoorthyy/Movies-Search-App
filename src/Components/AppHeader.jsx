@@ -26,8 +26,8 @@ const AppHeader = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="text-3xl flex gap-3 items-center">
-          <BiSolidCameraMovie />
+        <div className="text-3xl flex gap-3 items-center ">
+          <BiSolidCameraMovie className="lg:text-4xl text-6xl md:text-3xl"/>
           <h1 className="italic underline">Movies Search App</h1>
         </div>
 

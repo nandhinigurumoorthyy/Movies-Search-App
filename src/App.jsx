@@ -6,6 +6,7 @@ import About from "./Components/About";
 import AppFooter from "./Components/AppFooter";
 import MovieContainer from "./Components/MovieContainer";
 import SeeMore from "./Components/SeeMore";
+import Contact from "./Components/Contact";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact/>} />
           <Route path="/search/:query/:value" element={<MovieContainer />} />
           <Route path="/search/:query/:value/:imdbID" element={<SeeMore/>}/>
         </Routes>

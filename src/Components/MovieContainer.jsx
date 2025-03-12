@@ -34,35 +34,34 @@ const MovieContainer = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col lg:px-24 md:px-20 px-10">
       {film && film.length > 0 ? (
         <>
-          <div className="grid grid-cols-4 gap-8 p-14">
+          {/* Responsive Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-6">
             {getCurrentPageData().map((films) => (
               <div
                 key={films.imdbID}
-                className="w-72 min-h-full shadow-xl pb-4 flex flex-col gap-1"
+                className="w-full shadow-xl pb-4 flex flex-col gap-1 rounded-xl overflow-hidden hover:bg-neutral-300 transition-all hover:shadow-lg"
               >
-                <div className="flex justify-center">
+                <div className="flex justify-center p-2">
                   <img
-                    src={films.Poster}
-                    className="w-56 h-52"
+                    src={films.Poster !== "N/A" ? films.Poster : "https://via.placeholder.com/150"}
+                    className="w-40 h-56 object-fill rounded-md"
                     alt={films.Title}
                   />
                 </div>
-                <p className="flex-wrap font-semibold text-xl pl-3">
-                  {films.Title}
-                </p>
-                <p className="text-neutral-600 pl-3">{films.Type}</p>
+                <p className="flex-wrap font-semibold text-lg pl-3">{films.Title}</p>
+                <p className="text-neutral-600 pl-3 capitalize">{films.Type}</p>
                 <p className="pl-3">{films.Year}</p>
-                <p className="pl-3">imdbID: {films.imdbID}</p>
+                <p className="pl-3 text-sm text-gray-500">imdbID: {films.imdbID}</p>
                 <div className="items-center justify-center flex">
                   <button
                     type="button"
                     onClick={() =>
                       navigate(`/search/${query}/${value}/${films.imdbID}`)
                     }
-                    className="border-2 border-neutral-700 text-neutral-700 rounded-xl px-2 hover:bg-neutral-700 hover:text-white mt-2 py-1"
+                    className="border-2 border-neutral-700 text-neutral-700 rounded-xl px-2 hover:bg-neutral-700 hover:text-white mt-2 py-1 transition"
                   >
                     See More
                   </button>
@@ -70,13 +69,14 @@ const MovieContainer = () => {
               </div>
             ))}
           </div>
+
           {/* Pagination */}
           <div className="flex justify-center items-center gap-4 py-6">
             <button
               className={`px-4 py-2 rounded-lg border ${
                 currentPage === 1
                   ? "bg-gray-300 cursor-not-allowed"
-                  : "bg-neutral-700 text-white hover:bg-neutral-500"
+                  : "bg-neutral-700 text-white hover:bg-neutral-500 transition"
               }`}
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((prev) => prev - 1)}
@@ -90,7 +90,7 @@ const MovieContainer = () => {
               className={`px-4 py-2 rounded-lg border ${
                 currentPage === totalPages
                   ? "bg-gray-300 cursor-not-allowed"
-                  : "bg-neutral-700 text-white hover:bg-neutral-500"
+                  : "bg-neutral-700 text-white hover:bg-neutral-500 transition"
               }`}
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage((prev) => prev + 1)}

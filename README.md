@@ -1,5 +1,12 @@
-
   <h1>Movie Search App</h1>
+  <br>
+
+<p>
+  🔗 <strong>Live Demo</strong>: 
+  <a href="https://movies-search-app-omdb-api.netlify.app/" target="_blank">
+    View the Deployed App on Netlify
+  </a>
+</p>
 
   <p>
     This project is a <strong>React-based Movie Search Application</strong> that allows users to search for movies by title and type. Users can view details of selected movies and navigate through results using pagination. The app fetches movie data from the 
@@ -46,8 +53,6 @@
     <li>Replace the placeholder API key in the code (<code>459f1f91</code>) with your own.</li>
   </ol>
 
-
-
   <h2>Usage</h2>
   <ol>
     <li>Enter a movie title in the search bar.</li>
@@ -66,10 +71,6 @@
   </ul>
   <p>Install these dependencies using:</p>
   <pre><code>npm install axios react-router-dom tailwindcss react-icons</code></pre>
-
-
- 
-
 
   <h2>Acknowledgments</h2>
   <ul>

@@ -48,10 +48,7 @@
   <p>
     The app uses the OMDb API to fetch movie data. You will need an API key to run the application.
   </p>
-  <ol>
-    <li>Sign up for a free API key from <a href="https://www.omdbapi.com/apikey.aspx" target="_blank">OMDb API</a>.</li>
-    <li>Replace the placeholder API key in the code (<code>459f1f91</code>) with your own.</li>
-  </ol>
+- Sign up for a free API key from <a href="https://www.omdbapi.com/apikey.aspx" target="_blank">OMDb API</a>.
 
   <h2>Usage</h2>
   <ol>
